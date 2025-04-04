@@ -12,12 +12,17 @@ return {
   cmd = 'Neotree',
   keys = {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '<leader>e', ':Neotree toggle<CR>', desc = 'NeoTree toggle', silent = true },
   },
   opts = {
     filesystem = {
+      hijack_netrw_behavior = 'open_default',
       window = {
         mappings = {
           ['\\'] = 'close_window',
+          ['<ESC>'] = 'close_window',
+          ['h'] = 'close_node',
+          ['l'] = 'open',
         },
       },
     },
